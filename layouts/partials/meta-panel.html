@@ -1,5 +1,45 @@
 <div class="panel panel-primary compliance-panel">
-	<div class="panel-heading">Compliance Data & User Impact</div>
-	<div class="panel-body">this is a panel text
+	<div class="panel-heading" aria-level="2">Compliance Data & User Impact</div>
+	<div class="panel-body">
+    {{ if (isset .Params "user_impact_text") and (isset .Params "user_impact_percent") }}
+    <p aria-level="3"><strong>User Impact:</strong> <span>{{ .Params.user_impact_text | safeHTML }}</span></p>
+    <div class="progress progress-{{ .Params.user_impact_percent }}">
+      <div class="progress-bar" role="progressbar" aria-valuenow="{{ .Params.user_impact_percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ .Params.user_impact_percent }}%;">
+        <span class="sr-only">{{ .Params.user_impact_percent }}% Complete</span>
+      </div>
+    </div>
+    {{ end }}
+    {{ if (isset .Params "disabilities_affected") }}
+    <p aria-level="3"><strong>Disabilities Affected:</strong></p>
+    <ul>
+      {{range .Params.disabilities_affected }}
+        <li>{{ . }}</li>
+      {{end}}
+    </ul>
+    {{ end }}
+    {{ if (isset .Params "issue_type") }}
+    <p aria-level="3"><strong>Issue Type:</strong></p>
+    <ul>
+      {{range .Params.issue_type }}
+        <li>{{ . }}</li>
+      {{end}}
+    </ul>
+    {{ end }}
+    {{ if (isset .Params "wcag_success_criteria") }}
+    <p aria-level="3"><strong>Issue Type:</strong></p>
+    <ul>
+      {{range .Params.wcag_success_criteria }}
+        <li>{{ . }}</li>
+      {{end}}
+    </ul>
+    {{ end }}
+    {{ if (isset .Params "section_508_guidelines") }}
+    <p aria-level="3"><strong>Issue Type:</strong></p>
+    <ul>
+      {{range .Params.section_508_guidelines }}
+        <li>{{ . }}</li>
+      {{end}}
+    </ul>
+    {{ end }}
   </div>
 </div>

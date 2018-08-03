@@ -11,15 +11,49 @@ footer #tags {
   margin-top: auto;
 }
 
+/* For mobile phones and tablets */
 .compliance-panel {
-  width: 40%;
-  float: right;
+  width: 100%;
+  float: none;
 }
 
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .compliance-panel {
-      width: 100%;
-      float: none;
-    }
+/* For desktop */
+@media only screen and (min-width: 992px) {
+  .compliance-panel {
+    margin-left: 1rem;
+    width: 40%;
+    float: right;
+  }
+}
+
+.panel .progress {
+  position: relative;
+  background-color: rgba(247, 247, 247, 0.97);
+  width: 100%;
+  border: thin solid #ececec;
+  display: block !important;
+  opacity: 1 !important;
+  z-index: 200;
+  height: 20px;
+}
+
+.progress-bar {
+  position: relative;
+  height: 18px;
+}
+
+.progress-100 .progress-bar  {
+  background-color: red;
+}
+
+.progress-75 .progress-bar {
+  background-color: orange;
+}
+
+.progress-50 .progress-bar {
+  background-color: yellow;
+}
+
+.progress-25 .progress-bar {
+  background-color: green;
 }
