@@ -1,0 +1,8 @@
+#sidebar ul li.active > div > a {
+  background: none; /* Disable white bg for active parent menu item */
+  padding-left: 0; /* No left padding for active menu items */
+}
+
+#sidebar ul li div a {
+  white-space: normal; /* No ellipsis for title overflow */
+}
