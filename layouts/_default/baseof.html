@@ -16,6 +16,7 @@
     {{end}}
 
     {{ block "main" . }}
+
     {{ end }}
 
     {{if .Site.Params.themeStyle}}
@@ -26,6 +27,7 @@
 
     {{ block "footer" . }}
     {{ end }}
+
 
     {{ partial "custom-footer.html" . }}
   </body>

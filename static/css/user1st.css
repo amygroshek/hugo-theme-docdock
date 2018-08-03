@@ -6,3 +6,20 @@
 #sidebar ul li div a {
   white-space: normal; /* No ellipsis for title overflow */
 }
+
+footer #tags {
+  margin-top: auto;
+}
+
+.compliance-panel {
+  width: 40%;
+  float: right;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .compliance-panel {
+      width: 100%;
+      float: none;
+    }
+}
