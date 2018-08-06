@@ -26,6 +26,18 @@ footer #tags {
   }
 }
 
+.compliance-panel .panel-heading {
+    font-size: 22px;
+}
+
+.compliance-panel p {
+    margin: 1rem 0 .5rem;
+}
+
+.compliance-panel ul {
+    margin: .25rem 0 .5rem;
+}
+
 .panel .progress {
   position: relative;
   background-color: rgba(247, 247, 247, 0.97);
@@ -37,23 +49,79 @@ footer #tags {
   height: 20px;
 }
 
+@keyframes updateWidth100 {
+  0% { width: 0; }
+  50% { width: 0; }
+  100%   { width: 100%; }
+}
+
+@keyframes updateWidth75 {
+    0% { width: 0; }
+    50% { width: 0; }
+    100%   { width: 75%; }
+}
+
+@keyframes updateWidth50 {
+  0% { width: 0; }
+  50% { width: 0; }
+  100%   { width: 50%; }
+}
+
+@keyframes updateWidth25 {
+  0% { width: 0; }
+  50% { width: 0; }
+  100%   { width: 25%; }
+}
+
 .progress-bar {
   position: relative;
   height: 18px;
+  width: 0;
 }
 
 .progress-100 .progress-bar  {
   background-color: red;
+  animation: updateWidth100 ease-in-out 1000ms forwards;
 }
 
 .progress-75 .progress-bar {
   background-color: orange;
+  animation: updateWidth75 ease-in-out 1000ms forwards;
 }
 
 .progress-50 .progress-bar {
   background-color: yellow;
+  animation: updateWidth50 ease-in-out 1000ms forwards;
 }
 
 .progress-25 .progress-bar {
   background-color: green;
+  animation: updateWidth25 ease-in-out 1000ms forwards;
+}
+
+/* sidebar toggle button show */
+/* #sidebar-toggle-span {
+    display: inline-block;
+} */
+
+/* Sidebar navigation heading */
+#sidebar h3 {
+    font-family: 'Novacento Sans Wide', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+    color: #fff;
+}
+
+#sidebar .nav-header {
+    margin: 1.5rem 0 1rem 1rem;
+}
+
+#shortcuts h3 {
+    margin-top: 1.5rem;
+}
+
+#header-wrapper {
+    border-bottom: none;
+}
+
+#header-wrapper .nav-search {
+    text-align: left;
 }

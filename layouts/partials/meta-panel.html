@@ -4,7 +4,7 @@
     {{ if (isset .Params "user_impact_text") and (isset .Params "user_impact_percent") }}
     <p aria-level="3"><strong>User Impact:</strong> <span>{{ .Params.user_impact_text | safeHTML }}</span></p>
     <div class="progress progress-{{ .Params.user_impact_percent }}">
-      <div class="progress-bar" role="progressbar" aria-valuenow="{{ .Params.user_impact_percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ .Params.user_impact_percent }}%;">
+      <div class="progress-bar" role="progressbar" aria-valuenow="{{ .Params.user_impact_percent }}" aria-valuemin="0" aria-valuemax="100">
         <span class="sr-only">{{ .Params.user_impact_percent }}% Complete</span>
       </div>
     </div>
@@ -43,3 +43,4 @@
     {{ end }}
   </div>
 </div>
+<!-- style="width: {{ .Params.user_impact_percent }}%;" -->
