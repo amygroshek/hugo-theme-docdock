@@ -3,11 +3,16 @@
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
 </span>
 {{if .Site.Home.Content }}
-    <h1>{{.Site.Home.Title}}</h1>
+
+    {{ if .Params.title }}
+        <h1 id="main">{{.Params.title}}</h1>
+    {{ else }}
+        <h1 id="main">{{.Site.Title}}</h1>
+    {{ end }}
 
     {{.Site.Home.Content}}
 
-    <h2 class="page-index">Page Index</h2>
+    <h2 class="page-index">Site Index</h2>
     {{ range $.Site.Home.Sections }}
       <a href="{{.Permalink}}" class="page-index">{{ .Title }}</a>
       <ul class="page-index">

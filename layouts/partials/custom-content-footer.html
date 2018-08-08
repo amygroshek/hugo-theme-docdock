@@ -1,25 +1,25 @@
 <footer class=" footline" >
+    <div class="flex-parent tags">
+    	{{with .Params.LastModifierDisplayName}}
+    	    <i class='fa fa-user'></i> <a href="mailto:{{ $.Params.LastModifierEmail }}">{{ . }}</a> {{with $.Date}} <i class='fa fa-calendar'></i> {{ .Format "02/01/2006" }}{{end}}
+    	    </div>
+    	{{end}}
 
-	{{with .Params.LastModifierDisplayName}}
-	    <i class='fa fa-user'></i> <a href="mailto:{{ $.Params.LastModifierEmail }}">{{ . }}</a> {{with $.Date}} <i class='fa fa-calendar'></i> {{ .Format "02/01/2006" }}{{end}}
-	    </div>
-	{{end}}
-
-	{{if .Params.tags }}
-	  <div id="tags">
-	    {{ range $index, $tag := .Params.tags }}
-	      <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}">{{ $tag }}</a>
-	    {{ end }}
-	  </div>
-	{{ end }}
-
-    <p class="address">Address: 555 12th St, NW 630A<br> Washington, DC 20004<br> Phone number: (888) 995-WCAG<br> International number: 1(888) 995-9224<br> Email: accessibility@user1st.com</p>
-
-    <p class="copyright">&copy; User1st 2018 onwards</p>
-
-    {{ if .Site.Params.footerlogoimg }}
-        <a href="https://user1st.com/" class="user1st-logo" title="Select this link to go to User1st.com">
-            <img src="{{.Site.BaseURL}}images/{{.Site.Params.footerlogoimg}}" alt="User1st logo"/>
-        </a>
-    {{ end }}
+    	{{if .Params.tags }}
+    	  <div id="tags">
+    	    {{ range $index, $tag := .Params.tags }}
+    	      <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}">{{ $tag }}</a>
+    	    {{ end }}
+    	  </div>
+    	{{ end }}
+    </div>
+    <div class="flex-parent addr">
+        <p class="address">{{ .Site.Params.address | safeHTML }}</p>
+        {{ if .Site.Params.footerlogoimg }}
+            <a href="https://user1st.com/" class="user1st-logo" title="Select this link to go to User1st.com">
+                <img src="{{.Site.BaseURL}}images/{{.Site.Params.footerlogoimg}}" alt="User1st logo"/>
+            </a>
+        {{ end }}
+    </div>
+    <p class="copyright">{{ .Site.Copyright | safeHTML }}</p>
 </footer>

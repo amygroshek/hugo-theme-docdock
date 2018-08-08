@@ -5,6 +5,7 @@
   {{ if .Site.GetPage "page" "_header.md" }}
     {{(.Site.GetPage "page" "_header.md").Content}}
   {{else}}
+    <a class="skip-main" href="#main">Skip to main content</a>
     {{if .Site.Params.logoimg}}
       <a class="baselink" title="{{.Site.Title}}" href="{{.Site.BaseURL}}">
         <img src="{{.Site.BaseURL}}images/{{.Site.Params.logoimg}}"/>

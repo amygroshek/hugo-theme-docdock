@@ -1,5 +1,5 @@
 <div class="panel panel-primary compliance-panel">
-	<div class="panel-heading" aria-level="2">Compliance Data & User Impact</div>
+	<div class="panel-heading"><h2>Compliance Data & User Impact</h2></div>
 	<div class="panel-body">
     {{ if (isset .Params "user_impact_text") and (isset .Params "user_impact_percent") }}
     <p aria-level="3"><strong>User Impact:</strong> <span>{{ .Params.user_impact_text | safeHTML }}</span></p>

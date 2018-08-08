@@ -3,6 +3,8 @@
 {{ .Hugo.Generator }}
 
 <title>{{ .Title }} :: {{ .Site.Title }}</title>
+<meta name="description" content={{ .Site.Params.description }}>
+<meta name="keywords" content={{ .Site.Params.keywords }}>
 <link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
 <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
 <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">

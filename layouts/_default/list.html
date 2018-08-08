@@ -1,6 +1,19 @@
 {{ define "main" }}
 {{if .Content}}
 {{ .Content }}
+
+    <!-- Insert pages index -->
+    {{ if .Pages }}
+        <h2 class="page-index">Section Index</h2>
+          <ul class="page-index">
+          {{ range .Pages }}
+              <li><a href="{{.Permalink}}">{{ .Title }}</a></li>
+          {{ end }}
+          </ul>
+    {{ end }}
+
+    <!-- end Insert pages index -->
+
 {{else }}
 {{ $paginator := .Paginator }}
 
