@@ -5,9 +5,9 @@
 {{if .Site.Home.Content }}
 
     {{ if .Params.title }}
-        <h1 id="main">{{.Params.title}}</h1>
+        <h1 id="maincontent">{{.Params.title}}</h1>
     {{ else }}
-        <h1 id="main">{{.Site.Title}}</h1>
+        <h1 id="maincontent">{{.Site.Title}}</h1>
     {{ end }}
 
     {{.Site.Home.Content}}
