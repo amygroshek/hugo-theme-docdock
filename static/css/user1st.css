@@ -125,3 +125,22 @@ footer #tags {
 #header-wrapper .nav-search {
     text-align: left;
 }
+
+ul.page-index {
+    /* Make page index list more compact */
+    margin-top: 0;
+    margin-bottom: .25rem;
+}
+
+/* Footer */
+/* Mobile first */
+footer #tags {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+/* Center address */
+/* Center copyright */
+/* Center logo */
+/* Desktop */
+/* Left-align adderess and copyright */
+/* Right-align logo */
