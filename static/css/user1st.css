@@ -66,7 +66,31 @@ h2 {
   100%   { width: 100%; }
 }
 
-@keyframes updateWidth75 {
+@keyframes updateWidth80 {
+    0% { width: 0; }
+    50% { width: 0; }
+    100%   { width: 80%; }
+}
+
+@keyframes updateWidth60 {
+    0% { width: 0; }
+    50% { width: 0; }
+    100%   { width: 60%; }
+}
+
+@keyframes updateWidth40 {
+    0% { width: 0; }
+    50% { width: 0; }
+    100%   { width: 40%; }
+}
+
+@keyframes updateWidth20 {
+    0% { width: 0; }
+    50% { width: 0; }
+    100%   { width: 20%; }
+}
+
+/* @keyframes updateWidth75 {
     0% { width: 0; }
     50% { width: 0; }
     100%   { width: 75%; }
@@ -82,7 +106,7 @@ h2 {
   0% { width: 0; }
   50% { width: 0; }
   100%   { width: 25%; }
-}
+} */
 
 .progress-bar {
   position: relative;
@@ -95,7 +119,27 @@ h2 {
   animation: updateWidth100 ease-in-out 1000ms forwards;
 }
 
-.progress-75 .progress-bar {
+.progress-80 .progress-bar {
+  background-color: red;
+  animation: updateWidth80 ease-in-out 1000ms forwards;
+}
+
+.progress-60 .progress-bar {
+  background-color: orange;
+  animation: updateWidth60 ease-in-out 1000ms forwards;
+}
+
+.progress-40 .progress-bar {
+  background-color: orange;
+  animation: updateWidth40 ease-in-out 1000ms forwards;
+}
+
+.progress-20 .progress-bar {
+  background-color: yellow;
+  animation: updateWidth20 ease-in-out 1000ms forwards;
+}
+
+/* .progress-75 .progress-bar {
   background-color: orange;
   animation: updateWidth75 ease-in-out 1000ms forwards;
 }
@@ -108,7 +152,7 @@ h2 {
 .progress-25 .progress-bar {
   background-color: green;
   animation: updateWidth25 ease-in-out 1000ms forwards;
-}
+} */
 
 /* sidebar toggle button show */
 /* #sidebar-toggle-span {
@@ -202,4 +246,14 @@ a.skip-main:focus, a.skip-main:active {
     text-align:center;
     font-size:1.2em;
     z-index:999;
+}
+
+table.issue-content-meta {
+    width: auto;
+    border: none;
+    /* margin-top: 2.5em; */
+}
+
+table.issue-content-meta td {
+    border: none;
 }

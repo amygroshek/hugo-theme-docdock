@@ -17,29 +17,64 @@
       {{end}}
     </ul>
     {{ end }}
-    {{ if (isset .Params "issue_type") }}
-    <p aria-level="3"><strong>Issue Type:</strong></p>
-    <ul>
-      {{range .Params.issue_type }}
-        <li>{{ . }}</li>
-      {{end}}
-    </ul>
+    {{ if (isset .Params "wcag_principle") }}
+        <p aria-level="3"><strong>WCAG Principle:</strong><br>
+            <span class="wcag_principle"> {{ .Params.wcag_principle }} </span>
+        </p>
     {{ end }}
-    {{ if (isset .Params "wcag_success_criteria") }}
-    <p aria-level="3"><strong>Issue Type:</strong></p>
-    <ul>
-      {{range .Params.wcag_success_criteria }}
-        <li>{{ . }}</li>
-      {{end}}
-    </ul>
+    <!-- {{ if (isset .Params "object_type") }}
+        <p><strong>Object type:</strong> {{ .Params.object_type }}</p>
     {{ end }}
-    {{ if (isset .Params "section_508_guidelines") }}
-    <p aria-level="3"><strong>Issue Type:</strong></p>
-    <ul>
-      {{range .Params.section_508_guidelines }}
-        <li>{{ . }}</li>
-      {{end}}
-    </ul>
+    {{ if (isset .Params "rank") }}
+        <p><strong>Rank:</strong> {{ .Params.rank }}</p>
+    {{ end }}
+    {{ if (isset .Params "auto_test_accuracy") }}
+        <p><strong>Automated Test Accuracy:</strong> {{ .Params.auto_test_accuracy }}</p>
+    {{ end }} -->
+    {{ if (isset .Params "wcag_guideline") }}
+        <p aria-level="3"><strong>WCAG Guideline:</strong><br>
+            <span>
+                <a href=" {{ .Params.wcag_guildeline_link }} ">{{ .Params.wcag_guideline }}</a>
+            </span>
+        </p>
+    {{ end }}
+    {{ if (isset .Params "solution_technique") }}
+        <p aria-level="3"><strong>Solution Technique:</strong><br>
+            <span>
+                <a href=" {{ .Params.solution_technique_link }} ">{{ .Params.solution_technique }}</a>
+            </span>
+        </p>
+    {{ end }}
+    {{ if (isset .Params "user1st_automated_text") or (isset .Params "user1st_rapid_remediation") or (isset .Params "user1st_manual_text") or (isset .Params "user1st_plugin_role") }}
+        <p aria-level="3"><strong>User1st Product Log:</strong></p>
+        <table class="issue-content-meta">
+            <tbody>
+                {{ if (isset .Params "user1st_automated_text") }}
+                    <tr>
+                        <td>Automated text (uTester):</td>
+                        <td>{{ .Params.user1st_automated_text }} </td>
+                    </tr>
+                {{ end }}
+                {{ if (isset .Params "user1st_rapid_remediation") }}
+                    <tr>
+                        <td>Rapid Remediation (uRemediate):</td>
+                        <td> {{ .Params.user1st_rapid_remediation }} </td>
+                    </tr>
+                {{ end }}
+                {{ if (isset .Params "user1st_manual_text") }}
+                    <tr>
+                        <td>Manual Text (plugin):</td>
+                        <td> {{ .Params.user1st_manual_text }} </td>
+                    </tr>
+                {{ end }}
+                {{ if (isset .Params "user1st_plugin_role") }}
+                    <tr>
+                        <td>Plugin Role:</td>
+                        <td> {{ .Params.user1st_plugin_role }} </td>
+                    </tr>
+                {{ end }}
+            </tbody>
+        </table>
     {{ end }}
   </div>
 </div>
