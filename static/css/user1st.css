@@ -257,3 +257,7 @@ table.issue-content-meta {
 table.issue-content-meta td {
     border: none;
 }
+
+footer {
+    clear: both;
+}
